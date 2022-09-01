@@ -1,0 +1,7 @@
+name: KCurrency
+version: '${project.version}'
+main: me.khanh.plugins.kcurrency.KCurrencyPlugin
+api-version: 1.13
+softdepend: [ PlaceholderAPI ]
+authors: [ KhanhHuynh ]
+description: Help the server have many different currencies 
