@@ -7,15 +7,13 @@ import org.bukkit.command.CommandSender;
 import revxrsal.commands.annotation.Command;
 import revxrsal.commands.annotation.Subcommand;
 
-import java.util.Arrays;
-
 @Command({"KCurrency", "kc"})
 @SuppressWarnings("unused")
-public class MainCommand {
+public class KCurrencyCommands {
     @Getter
     private final KCurrencyPlugin plugin;
 
-    public MainCommand(KCurrencyPlugin plugin){
+    public KCurrencyCommands(KCurrencyPlugin plugin){
         this.plugin = plugin;
     }
 

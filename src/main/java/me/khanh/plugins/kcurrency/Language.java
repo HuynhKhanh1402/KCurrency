@@ -63,11 +63,13 @@ public class Language implements LocaleReader {
 
         langFile = Paths.get(langFolder.toString(), language + ".yml");
         if (Files.notExists(langFile)){
-            if (!language.equals("en_US")){
+            if (plugin.getResource(language + ".yml") == null){
                 LoggerUtils.warning(String.format("The language file %s.yml was not found in the languages folder", language));
                 LoggerUtils.info(String.format("&aCreating a file %s.yml with English language", language));
+                Files.copy(Objects.requireNonNull(plugin.getResource("en_US.yml")), langFile);
+            } else {
+                Files.copy(Objects.requireNonNull(plugin.getResource(language + ".yml")), langFile);
             }
-            Files.copy(Objects.requireNonNull(plugin.getResource("en_US.yml")), langFile);
         }
     }
 }

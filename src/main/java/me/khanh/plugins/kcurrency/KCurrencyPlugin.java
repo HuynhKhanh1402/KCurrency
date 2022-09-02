@@ -1,7 +1,7 @@
 package me.khanh.plugins.kcurrency;
 
 import lombok.Getter;
-import me.khanh.plugins.kcurrency.commands.MainCommand;
+import me.khanh.plugins.kcurrency.commands.KCurrencyCommands;
 import org.bukkit.plugin.java.JavaPlugin;
 import revxrsal.commands.bukkit.BukkitCommandHandler;
 import revxrsal.commands.bukkit.core.BukkitHandler;
@@ -27,7 +27,7 @@ public final class KCurrencyPlugin extends JavaPlugin {
         commandHandler = new BukkitHandler(this);
         commandHandler.setLocale(language.getLocale());
         commandHandler.getTranslator().add(language);
-        commandHandler.register(new MainCommand(this));
+        commandHandler.register(new KCurrencyCommands(this));
     }
 
     @Override
